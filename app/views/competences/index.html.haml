@@ -1,0 +1,23 @@
+%h1 Competences
+
+
+%table.table.table-hover
+  %thead
+  %tr
+    %th Name
+    %th Level
+    %th
+    %th
+    %th
+
+  %tbody
+  -@competences.each do |competence|
+    %tr
+      %td= competence.name
+      %td= competence.lvl
+      %td= link_to 'Show', competence
+      %td= link_to 'Edit', edit_competence_path(competence)
+      %td= link_to 'Destroy', competence, method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: 'delete_competence'
+
+- if user_signed_in? && current_user.admin
+  = link_to 'Add competence', new_competence_path

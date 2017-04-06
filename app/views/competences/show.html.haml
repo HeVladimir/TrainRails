@@ -1,0 +1,19 @@
+
+%h1 Show Competence
+
+%p
+  %strong Name:
+  = @competence.name
+
+%p
+  %strong Author:
+  - @user = User.find_by_id(@competence.user_id)
+  = @user.name
+
+%p
+  %strong Level
+  = @competence.lvl
+
+
+= link_to 'Edit', edit_competence_path(@competence) |
+= link_to 'Back', competences_path

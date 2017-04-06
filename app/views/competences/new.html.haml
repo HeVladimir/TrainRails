@@ -1,0 +1,10 @@
+%h1 New Competence
+
+-#= simple_form_for(@competence) do |f|
+-#    = f.input :name
+-#    = f.input :lvl
+-#    = f.button :submit
+
+= render 'form', competence: @competence
+
+= link_to 'Back', competences_path

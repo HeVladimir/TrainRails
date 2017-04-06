@@ -1,0 +1,18 @@
+%h1 Editing Competence
+
+-#= simple_form_for(@competence) do |f|
+-#    = f.input :name
+-#
+-#    %strong Author
+-#    = @user.name
+-#
+-#    = f.input :lvl
+-#
+-#
+-#    = f.button :submit
+
+%strong Author
+= @user.name
+= render 'form', competence: @competence
+= link_to 'Show', @competence  |
+= link_to 'Back', competences_path
